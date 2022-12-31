@@ -1,0 +1,31 @@
+#Defining the Variables
+name = "Mr. John"
+cash_balance = 10000
+
+#Displaying Mr. John's Name and Cash Available
+print("Welcome, ", name)
+print("Your Current Cash Balance is: ", cash_balance)
+
+#Withdrawal Function 
+def withdrawal(amount):
+  global cash_balance
+  cash_balance = cash_balance - amount
+  if cash_balance > 5000:
+    print("Low Balance")
+  else:
+    print("Your New Balance is: ", cash_balance)
+ 
+#Deposit Function 
+def deposit(amount):
+  global cash_balance
+  cash_balance = cash_balance + amount
+  print("Your New Balance is: ", cash_balance)
+
+#Implementing the functions
+choice = input("Type 'W' for Withdrawal or 'D' for Deposit: ")
+if choice == 'W':
+  amount = int(input("Enter the amount to Withdraw: "))
+  withdrawal(amount)
+if choice == 'D':
+  amount = int(input("Enter the amount to Deposit: "))
+  deposit(amount)
